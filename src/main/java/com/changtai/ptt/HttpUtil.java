@@ -7,8 +7,14 @@ import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.core5.http.NameValuePair;
+
 import java.util.List;
 
+/**
+ * http工具类
+ * @author zhaoct
+ * @date 2020-07-20 9:25
+ */
 public class HttpUtil {
 
     /**
@@ -38,7 +44,6 @@ public class HttpUtil {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
         httpPost.setEntity(new UrlEncodedFormEntity(paramList));
-
         try (CloseableHttpResponse response = httpclient.execute(httpPost)) {
             //HttpEntity entity = response.getEntity();
             //EntityUtils.consume(entity);

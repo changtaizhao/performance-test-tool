@@ -29,6 +29,11 @@
             <artifactId>httpclient5</artifactId>
             <version>5.0.1</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.httpcomponents</groupId>-->
+<!--            <artifactId>httpclient</artifactId>-->
+<!--            <version>4.5.12</version>-->
+<!--        </dependency>-->
     </dependencies>
 	
 	<build>
@@ -40,6 +45,31 @@
                 <configuration>
                     <source>${source.level}</source>
                     <target>${target.level}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                    <manifest>
+                    <mainClass>com.changtai.ptt.Main</mainClass>
+                    </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.changtai.ptt.Main</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>

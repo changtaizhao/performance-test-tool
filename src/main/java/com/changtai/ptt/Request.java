@@ -1,5 +1,10 @@
 package com.changtai.ptt;
 
+/**
+ * 请求
+ * @author zhaoct
+ * @date 2020-07-20 9:25
+ */
 public class Request {
 
     /**
