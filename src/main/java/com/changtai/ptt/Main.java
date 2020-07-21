@@ -17,7 +17,7 @@ public class Main {
      */
     public static void main(String[] args) {
         Request request = new Request();
-        request.setUrl("http://www.baidu.com");
+        request.setUrl(args[args.length-1]);
         for(int i=0; i<args.length; i++){
            if("-n".equals(args[i])){
                request.setRequests(Integer.parseInt(args[i+1]));
@@ -31,5 +31,4 @@ public class Main {
         System.out.println("平均响应时间：" + statistics.getAvgRT() + " ms ");
         System.out.println("95% 响应时间：" + statistics.get95PRT() + " ms ");
     }
-
 }
